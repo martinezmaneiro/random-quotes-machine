@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +6,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(13,14,255);
+  background: radial-gradient(circle, rgba(13,14,255,0.5522584033613445) 0%, rgba(22,155,241,0.6530987394957983) 100%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.jumbotron{
+  margin-top: 30vh
+}
+
+.card-header{
+  color: white !important;
+  font-weight: bold;
+  background: rgb(13,18,255);
+  background: linear-gradient(90deg, rgba(13,18,255,0.7259278711484594) 0%, rgba(22,111,241,0.7315301120448179) 100%);
 }
