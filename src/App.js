@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -18,19 +17,16 @@ function App() {
       setQuotes(data);
       let randomIndex = Math.floor(Math.random() * data.length);
       setRandomQuote(data[randomIndex]);
-      
+
     }
     fetchData();
   }, [])
-  
+
   const getNewQuote = () => {
 
     let randomIndex = Math.floor(Math.random() * quotes.length);
       setRandomQuote(quotes[randomIndex]);
     }
-
-
-
 
   return (
       <div className="container pt-5">
@@ -45,10 +41,10 @@ function App() {
                 </>) : (<h2>Loading</h2>)
                 }
               <div className='row'>
-                <column className='col'>
+                <div className='col'>
                   <button className='btn btn-primary' id='new-quote' onClick={getNewQuote}>Next Quote</button>
-                </column>
-                <column className='col'>
+                </div>
+                <div className='col'>
                   <a href={"twitter.com/intent/tweet"}
                   target='_blank'
                   rel='noreferrer'
@@ -56,7 +52,7 @@ function App() {
                   id="tweet-quote">
                   <FontAwesomeIcon icon={faTwitter} />
                   </a>
-                </column>
+                </div>
               </div>
             </div>
           </div>
