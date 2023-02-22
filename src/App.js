@@ -45,7 +45,7 @@ function App() {
                   <button className='btn btn-primary' id='new-quote' onClick={getNewQuote}>Next Quote</button>
                 </div>
                 <div className='col'>
-                  <a href={"twitter.com/intent/tweet"}
+                  <a href={`https://twitter.com/intent/tweet?text= ${randomQuote.text} ${randomQuote.author}`} 
                   target='_blank'
                   rel='noreferrer'
                   className='btn btn-outline-info '
