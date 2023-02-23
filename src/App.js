@@ -1,29 +1,31 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 
 function App() {
-
-  const [quotes, setQuotes] = React.useState([]);
-  const [randomQuote, setRandomQuote] = React.useState([]);
-
-  React.useEffect(() => {
+//set state for the fetch API json response (array of quotes) & set state to get a randomized quote
+  const [quotes, setQuotes] = useState([]);
+  const [randomQuote, setRandomQuote] = useState([]);
+//fetch data from API
+  useEffect(() => {
     async function fetchData(){
       const response = await fetch('https://type.fit/api/quotes');
       const data = await response.json();
-
+//use data to set a random quote into state
       setQuotes(data);
       let randomIndex = Math.floor(Math.random() * data.length);
       setRandomQuote(data[randomIndex]);
 
     }
+//call fetch API function
     fetchData();
   }, [])
 
+//
   const getNewQuote = () => {
-
     let randomIndex = Math.floor(Math.random() * quotes.length);
       setRandomQuote(quotes[randomIndex]);
     }
@@ -45,7 +47,7 @@ function App() {
                   <button className='btn btn-primary' id='new-quote' onClick={getNewQuote}>Next Quote</button>
                 </div>
                 <div className='col'>
-                  <a href={`https://twitter.com/intent/tweet?text= ${randomQuote.text} ${randomQuote.author}`} 
+                  <a href={`https://twitter.com/intent/tweet?text= ${randomQuote.text} ${randomQuote.author}`}
                   target='_blank'
                   rel='noreferrer'
                   className='btn btn-outline-info '
