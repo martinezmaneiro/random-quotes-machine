@@ -24,7 +24,7 @@ function App() {
     fetchData();
   }, [])
 
-//
+//get new random quote & set it into state
   const getNewQuote = () => {
     let randomIndex = Math.floor(Math.random() * quotes.length);
       setRandomQuote(quotes[randomIndex]);
