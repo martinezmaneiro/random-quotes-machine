@@ -22,6 +22,4 @@ code {
 .card-header{
   color: white !important;
   font-weight: bold;
-  background: rgb(13,18,255);
-  background: linear-gradient(90deg, rgba(13,18,255,0.7259278711484594) 0%, rgba(22,111,241,0.7315301120448179) 100%);
 }
